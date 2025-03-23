@@ -2,7 +2,7 @@
 // Exercise 1; (DONE)
 // Stwórz tablicę (tab1) imion psów (7 elementow);
 
-const tab1 = ["Alex", "Lua", "Kava", "Yoko", "Sia", "Olo", "Hector"];
+const tab1: string[] = ["Alex", "Lua", "Kava", "Yoko", "Sia", "Olo", "Hector"];
 
 // odowłaj się do pierwszego elementu tablicy;
 
@@ -61,18 +61,22 @@ function removeFromStart(tab: string[]) {
     tab.shift();
 }
 
-// stwórz drugą tablicę, do której przypiszesz tablicę 1 np. const tab2=tab1
+// stwórz drugą tablicę, do której przypiszesz tablicę 1 np. const tab2=tab1;
 
-/* zrób kopię tablicy 1 do zmiennej tab3 np. const tab3=[...tab1]
+/* 
+
+zrób kopię tablicy 1 do zmiennej tab3 np. const tab3=[...tab1];
  - [ ] stwórz drugą tablicę, do której przypiszesz tablicę 1 np. const tab2=tab1;
- - [ ] zrób kopię tablicy 1 do zmiennej tab3 np. const tab3=[...tab1]
- - [ ] usuń element z początku z tab2 i tab3
- - [ ] sprawdź czy tab1 się zmieniła
- - [ ] odwróć tab1 za pomocą .reverse(),
- - [ ] sprawdź czy tab1 i tab2 się zmieniła, */
+ - [ ] zrób kopię tablicy 1 do zmiennej tab3 np. const tab3=[...tab1];
+ - [ ] usuń element z początku z tab2 i tab3;
+ - [ ] sprawdź czy tab1 się zmieniła;
+ - [ ] odwróć tab1 za pomocą .reverse();
+ - [ ] sprawdź czy tab1 i tab2 się zmieniła;
 
-const tab2 = tab1;
-const tab3 = [...tab1];
+ */
+
+const tab2: string[] = tab1;
+const tab3: string[] = [...tab1];
 removeFromStart(tab2);
 removeFromStart(tab3);
 
@@ -84,16 +88,16 @@ console.log(tab2);
 console.log(tab3);
 
 // Zad 3; (DONE)
-// Stworz tablicę przechowującą odczyt temperatury ze stacji pogodowej.
-// - [ ] znajdź wartość maksymalną i minimalną,
-// - [ ] oblicz średnią temperaturę,
-// - [ ] oblicz różnicę między max, a min
-// - [ ] znajdź index elementu o minimalnej temperaturze (indexOf),
-// - [ ] sprawdź czy lista zawiera liczbę 20,
-// - [ ] wyświetl elementy tablicy za pomocą for i foreach <br />
-// Wpisywanie temperatury możesz zrobić bezpośrednio w kodzie, lub pobierać dane za pomocą prompta
+// Stworz tablicę przechowującą odczyt temperatury ze stacji pogodowej;
+// - [ ] znajdź wartość maksymalną i minimalną;
+// - [ ] oblicz średnią temperaturę;
+// - [ ] oblicz różnicę między max, a min;
+// - [ ] znajdź index elementu o minimalnej temperaturze (indexOf);
+// - [ ] sprawdź czy lista zawiera liczbę 20;
+// - [ ] wyświetl elementy tablicy za pomocą for i foreach;
+// Wpisywanie temperatury możesz zrobić bezpośrednio w kodzie, lub pobierać dane za pomocą prompta;
 
-const temperatureReadings = [12, 13, 14, 15, 16, 17, 11, 10];
+const temperatureReadings: number[] = [12, 13, 14, 15, 16, 17, 11, 10];
 
 function getMinMaxTemperatures(arr: number[]) {
     return {min: Math.min(...arr), max: Math.max(...arr)}
@@ -166,8 +170,8 @@ accountData.forEach((value, key) => {
 });
 
 // Zadanie 5; (Set) (DONE)
-// - [ ] Stwórz zbiór set do przechowywania peseli użytkowników aplikacji,
-// - [ ] dodaj do niego 3 pesele (możesz skorzystać z [generator peseli](https://pesel.cstudios.pl/o-generatorze/generator-on-line)),
+// - [ ] Stwórz zbiór set do przechowywania peseli użytkowników aplikacji;
+// - [ ] dodaj do niego 3 pesele (możesz skorzystać z [generator peseli](https://pesel.cstudios.pl/o-generatorze/generator-on-line));
 // - [ ] odczytaj rozmiar zbioru;
 // - [ ] dodaj pesel, który był dodany wcześniej;
 // - [ ] odczytaj rozmiar zbioru (czy się zmienił?);
@@ -177,7 +181,7 @@ accountData.forEach((value, key) => {
 // - [ ] przeiteruj po zbiorze za pomocą for of;
 // - [ ] przeiteruj po zbiorze za pomocą forEach;
 
-const pesels = new Set(["64061471724", "77122077195", "67020838725"]);
+const pesels: Set<string> = new Set(["64061471724", "77122077195", "67020838725"]);
 
 console.log(pesels.size);
 pesels.add("64061471724");
@@ -198,7 +202,7 @@ pesels.forEach(value => {
 // Zadanie 6 (DONE)
 // Mając do dyspozycji poniższą zmienną temp
 
-const temp = [1, 5, 7, 9, 13, 1, 7, 4, 6, 3, 1, 2];
+const temp: number[] = [1, 5, 7, 9, 13, 1, 7, 4, 6, 3, 1, 2];
 
 // - [ ] odczytaj długość tablicy temp;
 
@@ -206,11 +210,11 @@ console.log(temp.length);
 
 // - [ ] za pomocą zbioru (new Set()) wyeliminuj duplikaty z tablicy temp wynik zapisz do zmiennej temp1;
 
-const temp1 = new Set(temp);
-const temp2 = [...temp1];
+const temp1: Set<number> = new Set(temp);
+const temp2: number[] = [...temp1];
 // console.log(temp1);
 
-// - [ ] odczytaj dlugosc zmiennej temp1
+// - [ ] odczytaj dlugosc zmiennej temp1;
 // Niemozliwe (zwraca undefined). Nalezy przekonwertowac na tablice lub uzyc property size;
 
 // console.log(temp1.length); // undefined;
@@ -220,7 +224,19 @@ console.log(temp1.size); // Alternative;
 // Zadanie 7 (Object) (DONE)
 // Mając do dyspozycji poniższy obiekt:
 
-const person={
+interface Device {
+    name: string;
+    memory: string;
+}
+
+interface Person {
+    name: string;
+    surname: string;
+    devices: Device[];
+    bloodPressure: string[];
+}
+
+const person: Person = {
     name: "Adam",
     surname: "Jochemczyk",
     devices: [{
@@ -251,7 +267,7 @@ console.log(`Data: firstname - ${person.name}, lastname: ${person.surname}, bloo
 // - [ ] czy jego długośc wynosi 11 znaków;
 // - [ ] czy 3 i 4 liczba mieści się w zakresie 01-12;
 
-const examplePesel = "810321864545";
+const examplePesel: string = "810321864545";
 function isPeselValid(pesel: string) {
     return pesel.length === 11 && Number(pesel[3]) >= 1 && Number(pesel[3]) <= 12 && Number(pesel[4]) >= 1 && Number(pesel[4]) <=12;
 }
@@ -269,19 +285,19 @@ function calculator(num1: number, num2: number, operation: "+" | "-" | "*" | "/"
     switch (operation) {
         case "+":
             return num1 + num2;
-        break;
+            break;
         case "-":
             return num1 - num2;
-        break;
+            break;
         case "*":
             return num1 * num2;
-        break;
+            break;
         case "/":
             if (num2 === 0) {
                 throw new Error(`Cannot divide by ${num2}`);
             }
             return num1 / num2;
-        break;
+            break;
         default:
             return `Unknown operation: "${operation}" for values: {${num1}, ${num2}}`;
     }
@@ -301,11 +317,11 @@ function convertPascals(value: number) {
 console.log(convertPascals(200));
 
 // Zadanie 11; (DONE)
-// Stwórz funkcję, która jako paramter przyjmie godzinę, minuty, format.
-// - [ ] jeśli format to string PM lub AM przelicz na format 24h,
-// - [ ] jeśli format nie jest podany przelicz na format amerykański (AM/PM),
+// Stwórz funkcję, która jako paramter przyjmie godzinę, minuty, format;
+// - [ ] jeśli format to string PM lub AM przelicz na format 24h;
+// - [ ] jeśli format nie jest podany przelicz na format amerykański (AM/PM);
 
-function formtatTime(hours: number, minutes: number, format = "") {
+function formtatTime(hours: number, minutes: number, format?: "" | "AM" | "PM") {
     if (format === "PM" || format === "AM") {
         if (format === "AM" && hours === 12) hours = 0;
         if (format === "PM" && hours !== 12) hours += 12;
@@ -365,7 +381,7 @@ function getEvenNums(arr: number[]) {
 console.log(getEvenNums(nums1));
 
 // Zadanie 14; (DONE)
-// Stwórz funkcję która dla podanej tablicy liczb zwróci tylko liczby nieparzyste
+// Stwórz funkcję która dla podanej tablicy liczb zwróci tylko liczby nieparzyste;
 
 const nums2: number[] = [9, 90, 220, 33, 76, 45, 11];
 
@@ -388,8 +404,8 @@ function getUnevenNums(arr: number[]) {
 console.log(getUnevenNums(nums2));
 
 // Zadanie 15; (DONE)
-// Stwórz funkcję która dla podanej tablicy liczb zwróci obiekt zawierający minimalna i maksymalną liczbe ze zbioru np.
-// return {min: 1, max: 10}
+// Stwórz funkcję która dla podanej tablicy liczb zwróci obiekt zawierający minimalna i maksymalną liczbe ze zbioru np;
+// return {min: 1, max: 10};
 
 const nums3: number[] = [19, 12, 43, 22, 9, 45, 192];
 
